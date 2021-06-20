@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from datetime import datetime
-
+import sys
 
 def get_datetime(time):
   dt = datetime.strptime(time, '%Y%m%d%H%M%S')
@@ -49,6 +49,9 @@ def question3(path='log.txt',m=2,t=5):
 
 
 if __name__ == '__main__':
-  question3(path='data/question2_test.txt',m=3,t=9)
-
+  args = sys.argv
+  if len(args)==3:
+    question3(path='data/question2_test.txt',m=int(args[1]),t=int(args[2]))
+  else:
+    print('引数m,tが必要\n例\npython3 question3.py m t')
     

@@ -3,6 +3,7 @@
 
 from datetime import datetime
 import ipaddress
+import sys
 
 
 def get_datetime(time):
@@ -91,4 +92,8 @@ def question4(path='log.txt',n=2):
   return result
 
 if __name__ == '__main__':
-  question4(path='data/question4_test.txt',n=2)
+  args = sys.argv
+  if len(args)==2:
+    question4(path='data/question4_test.txt',n=int(args[1]))
+  else:
+    print('引数nが必要\n例\npython3 question4.py n')

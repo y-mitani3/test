@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from datetime import datetime
-
+import sys
 
 def get_datetime(time):
   dt = datetime.strptime(time, '%Y%m%d%H%M%S')
@@ -53,4 +53,8 @@ def question2(path='log.txt',n=2):
 
 
 if __name__ == '__main__':
-  question2('data/question2_test.txt',n=2)
+  args = sys.argv
+  if len(args)==2:
+    question2('data/question2_test.txt',n=int(args[1]))
+  else:
+    print('引数nが必要\n例\npython3 question2.py n')
