@@ -51,10 +51,17 @@ def question2(path='log.txt',n=2):
   print(result)
   return result
 
+def output(path,result):
+  f=open(path, "w")
+  for x in result:
+    f.write(str(x)+'\n')
+  f.close()
+
 
 if __name__ == '__main__':
   args = sys.argv
   if len(args)==2:
-    question2('data/question2_test.txt',n=int(args[1]))
+    result=question2('data/question2_test.txt',n=int(args[1]))
+    output('result/result2.txt',result)
   else:
     print('引数nが必要\n例\npython3 question2.py n')

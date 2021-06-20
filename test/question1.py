@@ -35,6 +35,12 @@ def question1(path='log.txt'):
   print(result)
   return result
 
+def output(path,result):
+  f=open(path, "w")
+  for x in result:
+    f.write(str(x)+'\n')
+  f.close()
 
 if __name__ == '__main__':
-  question1(path='data/question1_test.txt')
+  result=question1(path='data/question1_test.txt')
+  output('result/result1.txt',result)

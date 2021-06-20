@@ -47,11 +47,17 @@ def question3(path='log.txt',m=2,t=5):
   print(result)
   return result
 
+def output(path,result):
+  f=open(path, "w")
+  for x in result:
+    f.write(str(x)+'\n')
+  f.close()
 
 if __name__ == '__main__':
   args = sys.argv
   if len(args)==3:
-    question3(path='data/question2_test.txt',m=int(args[1]),t=int(args[2]))
+    result=question3(path='data/question3_test.txt',m=int(args[1]),t=int(args[2]))
+    output('result/result3.txt',result)
   else:
     print('引数m,tが必要\n例\npython3 question3.py m t')
     
